@@ -1,7 +1,7 @@
 
 MATCH (q:Query) DETACH DELETE (q);
 CALL apoc.periodic.iterate(
-		"CALL apoc.load.json('file:///61900b9f-20211115-134539.json')
+		"CALL apoc.load.json('file:///downloaded-query-log.json')
 				YIELD value AS row", 
 		"CREATE (q:Query) 
 			SET     q.insertId = row.insertId,
