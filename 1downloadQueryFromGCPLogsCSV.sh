@@ -170,7 +170,7 @@ echo "${DBID_FILTER} ${GCP_FILTER_QUERY}" > "${BASE_FILENAME}.gcp-ql"
 
 
 ################gcloud --project "neo4j-cloud/logs/neo4j-query" logging read --format=json "${DBID_FILTER} ${GCP_FILTER_QUERY}" > "${BASE_FILENAME}.json"
-gcloud --project "${PROJECT}" logging read --format=json "${DBID_FILTER} ${GCP_FILTER_QUERY}" > "${BASE_FILENAME}.json"
+gcloud --project "${PROJECT}" logging read --format="csv[separator=', '](timestamp,jsonPayload.message)" "${DBID_FILTER} ${GCP_FILTER_QUERY}" > "${BASE_FILENAME}.json"
 # manage output
 mkdir -p $DESTDIR
 mv *.json ${DESTDIR}/

@@ -12,10 +12,10 @@ timestamp>="2021-11-14T23:55:00-0800"
 timestamp<="2021-11-15T00:05:00-0800"
 
 **if AuraDB running on AWS**
-./1downloadQueryFromGCPLogs.sh --dbid {{dbid}} -t time.gcp-ql --project aws-aura-iralogix
+./1downloadQueryFromGCPLogs.sh --dbid {{dbid}} -f filter-queries.gcp-ql -t time.gcp-ql --project aws-aura-iralogix
 
 **If AuraDB running on GCP**
-./1downloadQueryFromGCPLogs.sh --dbid {{dbid}} -t time.gcp-ql --project neo4j-cloud
+./1downloadQueryFromGCPLogs.sh  -t time.gcp-ql -f filter-queries.gcp-ql --project neo4j-cloud --dbid 
 
 After successfully executed the 1st scirpt, you will get your query log json file. 
 
